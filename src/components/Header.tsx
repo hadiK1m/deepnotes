@@ -13,7 +13,7 @@ export default function Header() {
     <>
       <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-md md:max-w-xl" id="header">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16 glass-card rounded-full px-6">
+          <div className="flex justify-between items-center h-16 glass-card backdrop-blur-sm rounded-full px-6">
             <Link href="#" className="text-xl font-bold tracking-wider">Hadi.N</Link>
             <nav className="hidden md:flex items-center space-x-6">
               <Link href="#about" className="hover:text-violet-300 transition-colors text-sm">Tentang Saya</Link>

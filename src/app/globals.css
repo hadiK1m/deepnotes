@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
+/* Aturan dasar untuk body */
 body {
     background-color: #05050A;
     color: #E5E7EB;
 }
 
+/* Kelas-kelas utilitas kustom Anda */
 .main-gradient-bg {
     background-image: radial-gradient(ellipse 60% 80% at 50% -10%, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0));
 }
 
 .glass-card {
-    background-color: rgba(124, 58, 237, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Gradasi halus untuk efek kilau kaca */
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));
+    backdrop-filter: blur(16px); /* Meningkatkan blur untuk efek lebih kuat */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Tepian putih tipis untuk menangkap cahaya */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Bayangan lembut untuk mengangkat elemen */
 }
 
 .fade-in-up {
@@ -82,4 +87,23 @@ body {
 
 .ai-form-shadow:focus-within::before {
     opacity: 1;
+}
+
+/* Perbaikan warna teks untuk jawaban Gemini */
+.prose {
+    --tw-prose-body: theme('colors.gray.200');
+    --tw-prose-headings: theme('colors.white');
+    --tw-prose-links: theme('colors.white');
+    --tw-prose-bold: theme('colors.white');
+    --tw-prose-code: theme('colors.white');
+    --tw-prose-pre-bg: theme('colors.gray.800');
+    --tw-prose-pre-code: theme('colors.gray.200');
+    --tw-prose-counters: theme('colors.gray.400');
+    --tw-prose-bullets: theme('colors.gray.400');
+    --tw-prose-hr: theme('colors.gray.500');
+    --tw-prose-quotes: theme('colors.gray.100');
+    --tw-prose-quote-borders: theme('colors.gray.500');
+    --tw-prose-captions: theme('colors.gray.400');
+    --tw-prose-th-borders: theme('colors.gray.500');
+    --tw-prose-td-borders: theme('colors.gray.600');
 }

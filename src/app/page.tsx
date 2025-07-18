@@ -7,6 +7,7 @@ import About from "@/components/About";
 import SkillsCarousel from "@/components/SkillsCarousel";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import SiteFooter from '@/components/InfoFooter';
 
 export default function Home() {
 
@@ -69,7 +70,7 @@ export default function Home() {
         <About />
         <SkillsCarousel />
         <Projects />
-        <Contact />
+        <SiteFooter />
       </main>
     </>
   );

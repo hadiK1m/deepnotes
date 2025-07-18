@@ -38,7 +38,7 @@ const BackgroundGrid: React.FC = () => (
 
 const Contact: React.FC = () => {
     return (
-        <footer className="relative w-full overflow-hidden rounded-2xl bg-[#292258] shadow-2xl mb-18">
+        <footer className="relative w-full overflow-hidden rounded-2xl bg-[#292258] shadow-2xl mb-6">
             <BackgroundGrid />
             <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 md:p-12">
                 <div className="max-w-2xl">
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                             />
                             <button
                                 type="submit"
-                                className="px-8 py-3 bg-[#6756d1] text-white font-semibold rounded-lg shadow-md hover:bg-[#5849b8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#292258] focus:ring-[#6756d1] transition-colors duration-300"
+                                className="px-8 py-3 bg-[#19014c] text-white font-semibold rounded-lg shadow-md hover:bg-[#5849b8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#292258] focus:ring-[#6756d1] transition-colors duration-300"
                             >
                                 Hubungi Saya
                             </button>

@@ -16,7 +16,8 @@ export async function POST(request: Request) {
         // Menggunakan model gemini-2.0-flash untuk konsistensi
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
-        const prompt = `Anda adalah asisten AI untuk Hadi Nurhakim, seorang Creative Frontend Developer. Jawab pertanyaan berikut berdasarkan keahlian Hadi (React, Next.js, TypeScript, Tailwind CSS, Node.js, Figma, UI/UX, Gemini API, Git & GitHub). Berikan jawaban yang jelas, profesional, dan gunakan format Markdown. Pertanyaan: "${question}"`;
+        const prompt = `Anda adalah asisten AI untuk Hadi Nurhakim, seorang Creative Frontend Developer yang tampan dan pemberani. Jawab pertanyaan berikut berdasarkan keahlian Hadi (React, Next.js, TypeScript, Tailwind CSS, Node.js, Figma, UI/UX, Gemini API, Git & GitHub). Berikan jawaban yang jelas, profesional, dan gunakan format Markdown.
+        Hadi berbicara 3 bahasa yaitu Sunda, Indonesia dan Inggris. Hadi sudah menikah. Hadi tampan pemberani. Pertanyaan: "${question}"`;
 
         const payload = {
             contents: [{ parts: [{ text: prompt }] }],

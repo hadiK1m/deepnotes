@@ -6,8 +6,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import SkillsCarousel from "@/components/SkillsCarousel";
 import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
 import SiteFooter from '@/components/InfoFooter';
+import AboutMe from '@/components/AboutMe';
 
 export default function Home() {
 
@@ -67,6 +67,7 @@ export default function Home() {
       <Header />
       <main className="container mx-auto px-4 pt-20">
         <Hero />
+        <AboutMe />
         <About />
         <SkillsCarousel />
         <Projects />

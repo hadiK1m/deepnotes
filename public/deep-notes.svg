@@ -1,0 +1,21 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definisi Gradasi Warna -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ikon Logo -->
+  <g transform="translate(5, 5)">
+    <path d="M20 0 C8.95 0 0 8.95 0 20 C0 31.05 8.95 40 20 40 L20 32 C13.37 32 8 26.63 8 20 C8 13.37 13.37 8 20 8 V0Z" fill="url(#grad1)"/>
+    <path d="M20 0 L20 8 L32 8 C32 4.69 30.34 1.84 28 0 L20 0Z" fill="url(#grad1)" opacity="0.7"/>
+    <path d="M20 40 L20 32 L32 32 C32 35.31 30.34 38.16 28 40 L20 40Z" fill="url(#grad1)" opacity="0.7"/>
+  </g>
+  
+  <!-- Teks Logo -->
+  <text x="55" y="32" font-family="Onest, sans-serif" font-size="24" font-weight="bold" fill="white">
+    DeepNotes
+  </text>
+</svg>

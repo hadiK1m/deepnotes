@@ -4,10 +4,7 @@ import Contact from './Contact';
 // Data for the footer links
 const aboutLinks = ['Home', 'Become a customer', 'About us', 'FAQ', 'Return policy', 'Contact us'];
 const languages = [
-    'Deutsch', 'English', 'Español',
-    'Français', 'Indonesian', 'Italian',
-    'Nederlands', 'Polnisch', 'Português',
-    'русский', 'Tiếng Việt', 'Türkçe'
+    'Indonesia'
 ];
 
 // Social Icons as React Components
@@ -52,7 +49,7 @@ const InfoFooter: React.FC = () => {
                                 key={lang}
                                 href="#"
                                 className={`
-                                    py-1 px-2 rounded-md text-center transition-colors text-base
+                                    py-1 px-2 rounded-md  transition-colors text-base
                                     ${lang === 'English'
                                         ? 'bg-teal-400 text-slate-800 font-semibold'
                                         : 'text-gray-300 hover:text-white hover:bg-white/10'

@@ -29,7 +29,7 @@ const AboutMe: React.FC = () => {
                                 <div className="relative z-10 w-[300px] h-[400px] md:w-[480px] md:h-[533px] flex items-end justify-center overflow-hidden">
                                     <Image
                                         src="https://1drv.ms/i/c/fa585b0a93f8a6e6/EbAyuy9_WeNDm9ZFotXMTHIB2zE7e1FMDBWFqAtELdUwHw?e=hfe0Q2"
-                                        alt="Alex Robert, UI/UX Designer"
+                                        alt="Hadi Nurhakim, Full Stack Developer"
                                         className="w-full h-full object-cover object-top border-4 shadow-lg -translate-y-4"
                                         style={{
                                             WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',

@@ -23,7 +23,7 @@ export default function Header() {
               <Link href="#skills" className="hover:text-violet-300 transition-colors text-sm">Keahlian</Link>
               <Link href="#projects" className="hover:text-violet-300 transition-colors text-sm">Proyek</Link>
             </nav>
-            <Link href="#contact" className="hidden md:block bg-violet-600 hover:bg-violet-700 text-white font-medium px-5 py-2 rounded-full transition-colors text-sm">Hubungi Saya</Link>
+            <Link href="#sitefooter" className="hidden md:block bg-violet-600 hover:bg-violet-700 text-white font-medium px-5 py-2 rounded-full transition-colors text-sm">Hubungi Saya</Link>
             <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu />
             </button>
@@ -33,11 +33,11 @@ export default function Header() {
 
       {isMenuOpen && (
         <div id="mobile-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 md:hidden">
-          <div className="glass-card rounded-2xl p-4 flex flex-col space-y-4 text-center">
+          <div className="glass-card backdrop-blur-sm rounded-2xl p-4 flex flex-col space-y-4 text-center">
             <Link href="#about" className="hover:text-violet-300 transition-colors py-2" onClick={closeMenu}>Tentang Saya</Link>
             <Link href="#skills" className="hover:text-violet-300 transition-colors py-2" onClick={closeMenu}>Keahlian</Link>
             <Link href="#projects" className="hover:text-violet-300 transition-colors py-2" onClick={closeMenu}>Proyek</Link>
-            <Link href="#contact" className="bg-violet-600 hover:bg-violet-700 text-white font-medium py-2 rounded-full transition-colors mt-2" onClick={closeMenu}>Hubungi Saya</Link>
+            <Link href="#sitefooter" className="bg-violet-600 hover:bg-violet-700 text-white font-medium py-2 rounded-full transition-colors mt-2" onClick={closeMenu}>Hubungi Saya</Link>
           </div>
         </div>
       )}

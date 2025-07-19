@@ -39,7 +39,7 @@ const AboutMe: React.FC = () => {
                                     <Image
                                         src={hadiImage}
                                         alt="Foto Hadi Nurhakim"
-                                        className="w-full h-full object-cover object-top border-4 border-gray-700 shadow-lg image-fade-mask"
+                                        className="w-full h-full object-cover object-top border-4 shadow-lg image-fade-mask"
                                         placeholder="blur" // Menambahkan efek blur saat loading
                                         width={400}
                                         height={400}

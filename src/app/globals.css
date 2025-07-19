@@ -2,15 +2,15 @@
 
 /* Aturan dasar untuk body */
 body {
-    background-color: #05050A;
+    background-color: #110028;
+    background-image: linear-gradient(to bottom, rgba(93, 0, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
     color: #E5E7EB;
 }
 
 /* Kelas-kelas utilitas kustom Anda */
 .main-gradient-bg {
-    background-image: radial-gradient(ellipse 60% 80% at 50% -10%, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0));
+    background-image: linear-gradient(to bottom, rgba(48, 15, 106, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
 }
-
 .glass-card {
     /* Gradasi halus untuk efek kilau kaca */
     background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));

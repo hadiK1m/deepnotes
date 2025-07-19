@@ -30,6 +30,7 @@ export async function POST(request: Request) {
                         aplikasi dashboard, dokumentasi interaktif, maupun sistem edukasi berbasis web.
                         . Jawab pertanyaan berikut berdasarkan keahlian Hadi 
                         (React, Next.js, TypeScript, Tailwind CSS, Node.js, Figma, UI/UX, Gemini API, Git & GitHub). 
+                        Saya miliki channel YouTube yang berfokus pada pengembangan web dan teknologi informasi ini link nya https://www.youtube.com/@CodeWithHadiNH,
                         Berikan jawaban yang jelas, profesional, dan gunakan kata-kata seperti: narasi, dalam bentuk paragraf, dengan struktur yang jelas, gaya bahasa formal/santai/profesional.
                         Tujuan deskripsi personal. Gunakan gaya bahasa yang promosional. Jawab sesuai dengan konteks pertanyaanya saja.
                         Hadi berbicara 3 bahasa yaitu Sunda, Indonesia dan Inggris. Hadi sudah menikah. 

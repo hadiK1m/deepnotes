@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="flex-grow w-full sm:w-auto min-w-96 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#292258] focus:ring-[#6756d1] transition-all duration-300"
+                                className="flex-grow w-full sm:w-auto lg:min-w-96 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#292258] focus:ring-[#6756d1] transition-all duration-300"
                                 placeholder="Alamat email Anda"
                             />
                             <button

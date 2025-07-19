@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
     return (
-        <div className="text-white min-h-screen flex items-center justify-center p-4 overflow-hidden">
+        <div className="text-white flex items-center justify-center p-4 overflow-hidden ">
             <style jsx global>{`
                 .image-fade-mask {
                     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
@@ -60,16 +60,16 @@ const AboutMe: React.FC = () => {
                         <p className="text-zinc-400 mt-6 max-w-md mx-auto lg:mx-0">
                             {/* Deskripsi Anda bisa ditambahkan di sini */}
                         </p>
-                        <div className="flex items-center justify-center lg:justify-start gap-6 mt-8">
-                            <button className="bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-transform hover:scale-105 shadow-md">
-                                <DownloadIcon />
-                                DOWNLOAD CV
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-8 w-full">
+                            <button className="w-full sm:w-auto bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-md">
+                                <DownloadIcon className="w-6 h-6" />
+                                <span className="truncate">DOWNLOAD CV</span>
                             </button>
-                            <button className="flex items-center gap-3 font-medium group">
+                            <button className="w-full sm:w-auto flex items-center justify-center gap-3 font-medium group py-3 px-6 rounded-lg transition-transform hover:scale-105">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#A3FF12] flex items-center justify-center transition-transform group-hover:scale-110">
-                                    <PlayIcon />
+                                    <PlayIcon className="w-6 h-6" />
                                 </div>
-                                PLAY VIDEO
+                                <span className="truncate">PLAY VIDEO</span>
                             </button>
                         </div>
                     </div>

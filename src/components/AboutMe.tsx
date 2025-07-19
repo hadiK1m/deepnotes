@@ -2,6 +2,9 @@
 
 import { DownloadIcon, PlayIcon } from 'lucide-react';
 import React from 'react';
+// --- PERUBAHAN 1: Impor gambar langsung ---
+import hadiImage from '@/assets/images/hadi.png';
+import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
     return (
@@ -12,6 +15,7 @@ const AboutMe: React.FC = () => {
                     mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
                 }
             `}</style>
+
             <div className="relative w-full max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
@@ -31,14 +35,15 @@ const AboutMe: React.FC = () => {
                                     ></div>
                                 </div>
                                 <div className="relative z-10 w-[300px] h-[400px] md:w-[480px] md:h-[533px] flex items-end justify-center overflow-hidden">
-                                    {/* --- PERUBAHAN DI SINI --- */}
-                                    <div
-                                        className="w-full h-full bg-cover bg-top border-4 border-gray-700 shadow-lg image-fade-mask"
-                                        style={{ backgroundImage: 'url(/hadi.png)' }}
-                                    >
-                                        {/* Div ini sengaja kosong, gambarnya adalah background */}
-                                    </div>
-                                    {/* --- AKHIR PERUBAHAN --- */}
+                                    {/* --- PERUBAHAN 2: Gunakan gambar yang diimpor --- */}
+                                    <Image
+                                        src={hadiImage}
+                                        alt="Foto Hadi Nurhakim"
+                                        className="w-full h-full object-cover object-top border-4 border-gray-700 shadow-lg image-fade-mask"
+                                        placeholder="blur" // Menambahkan efek blur saat loading
+                                        width={400}
+                                        height={400}
+                                    />
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,11 @@ const skills = [
     { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/white' },
     { name: 'UI/UX Design', logo: null },
     { name: 'Gemini API', logo: null },
-    { name: 'Git & GitHub', logo: 'https://cdn.simpleicons.org/github/white' }
+    { name: 'Git & GitHub', logo: 'https://cdn.simpleicons.org/github/white' },
+    { name: 'PostgreSQL', logo: 'https://cdn.simpleicons.org/postgresql/white' },
+    { name: 'Express.js', logo: 'https://cdn.simpleicons.org/express/white' },
+    { name: 'Vercel', logo: 'https://cdn.simpleicons.org/vercel/white' },
+    { name: 'REST API', logo: null },
 ];
 
 
@@ -32,8 +36,8 @@ export default function SkillsCarousel() {
     return (
         <section id="skills" className="py-24 overflow-hidden relative">
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold">Keahlian & Teknologi</h2>
-                <p className="text-gray-400 mt-2">Teknologi yang saya kuasai untuk mewujudkan ide menjadi kenyataan.</p>
+                <h2 className="text-4xl font-bold">Skills & Technologies</h2>
+                <p className="text-gray-400 mt-2">The tools I use to turn ideas into reality.</p>
             </div>
             <div className="carousel-container max-w-full mx-auto relative">
                 {/* Icon swipe overlay */}
@@ -55,7 +59,7 @@ export default function SkillsCarousel() {
                     {showSwipe && (
                         <div className="absolute left-1/2 -translate-x-1/2 -bottom-25 z-30 flex flex-col items-center pointer-events-none select-none animate-fade-in-out">
                             <Image src={swipeIcon} alt="Swipe Icon" width={80} height={80} className="w-20 h-20 mt-2 animate-swipe-gesture" />
-                            <span className="text-amber-50 font-semibold animate-pulse">Geser</span>
+                            <span className="text-amber-50 font-semibold animate-pulse">Swipe</span>
                         </div>
                     )}
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Contact from './Contact';
 
 // Data for the footer links
-const aboutLinks = ['Home', 'Become a customer', 'About us', 'FAQ', 'Return policy', 'Contact us'];
+const aboutLinks = ['Home'];
 const languages = [
     'Indonesia'
 ];
@@ -32,7 +32,7 @@ const InfoFooter: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8">
                 {/* About the store */}
                 <div>
-                    <h3 className="font-bold text-lg mb-4">About the store</h3>
+                    <h3 className="font-bold text-lg mb-4">About This Website</h3>
                     <ul className="space-y-2">
                         {aboutLinks.map(link => (
                             <li key={link}><a href="#" className="text-gray-300 hover:text-white transition-colors text-base">{link}</a></li>

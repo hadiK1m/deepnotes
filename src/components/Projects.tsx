@@ -4,8 +4,8 @@ export default function Projects() {
     return (
         <section id="projects" className="py-24">
             <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl font-bold">Proyek Unggulan</h2>
-                <p className="text-gray-400 mt-2">Beberapa karya yang pernah saya bangun.</p>
+                <h2 className="text-4xl font-bold">Project Highlights</h2>
+                <p className="text-gray-400 mt-2">A showcase of my development work.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Project Card 1 */}

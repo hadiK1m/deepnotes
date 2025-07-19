@@ -1,79 +1,99 @@
 "use client";
 
-import { DownloadIcon, PlayIcon } from 'lucide-react';
+
 import React from 'react';
-// --- PERUBAHAN 1: Impor gambar langsung ---
+import { DownloadIcon, TwitterIcon, DribbbleIcon, LinkedinIcon, GithubIcon } from './icons';
 import hadiImage from '@/assets/images/hadi.png';
 import Image from 'next/image';
 
+interface StatProps {
+    value: string;
+    label: string;
+}
+
+const StatItem: React.FC<StatProps> = ({ value, label }) => (
+    <div className="text-center md:text-left">
+        <p className="text-4xl lg:text-5xl font-bold text-white tracking-tight">{value}</p>
+        <p className="text-sm lg:text-base text-slate-400">{label}</p>
+    </div>
+);
+
+const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-slate-400 hover:text-violet-500 transition-colors duration-300"
+    >
+        {children}
+    </a>
+);
+
 const AboutMe: React.FC = () => {
+    const stats: StatProps[] = [
+        { value: '1+', label: 'Years of Experience' },
+        { value: '1+', label: 'Projects Completed' },
+        { value: '10', label: 'Opensource Library' },
+        { value: '1', label: 'Happy Customers' },
+    ];
+
     return (
-        <div className="text-white flex items-center justify-center p-4 overflow-hidden ">
-            <style jsx global>{`
-                .image-fade-mask {
-                    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-                    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-                }
-            `}</style>
-
-            <div className="relative w-full max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-                    {/* Left Side */}
-                    <div className="relative w-full lg:w-1/2 flex items-center justify-center lg:justify-start">
-                        <div className="relative mt-20 lg:mt-0">
-                            <div className="relative flex items-end justify-center w-[350px] h-[350px] md:w-[450px] md:h-[450px] mx-auto">
-                                <div className="absolute inset-0 flex items-center justify-center z-0">
-                                    <div
-                                        className="w-full h-full rounded-full border-8 border-violet-600 border-solid"
-                                        style={{
-                                            boxSizing: 'border-box',
-                                            background: 'transparent',
-                                            WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-                                            maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
-                                        }}
-                                    ></div>
-                                </div>
-                                <div className="relative z-10 w-[300px] h-[400px] md:w-[480px] md:h-[533px] flex items-end justify-center overflow-hidden">
-                                    {/* --- PERUBAHAN 2: Gunakan gambar yang diimpor --- */}
-                                    <Image
-                                        src={hadiImage}
-                                        alt="Foto Hadi Nurhakim"
-                                        className="w-full h-full object-cover object-top border-4 shadow-lg image-fade-mask"
-                                        placeholder="blur" // Menambahkan efek blur saat loading
-                                        width={400}
-                                        height={400}
-                                    />
-                                </div>
-                            </div>
+        <div className="relative z-10 w-full  mx-auto bg-[#19014c30] backdrop-blur-sm rounded-2xl shadow-2xl shadow-purple-900/20 p-8 md:p-12 border border-slate-800">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Content */}
+                <div className="flex flex-col gap-8">
+                    <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight bg-purple-50 bg-clip-text text-transparent mb-2">
+                        I am Hadi Nurhakim
+                    </h1>
+                    <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+                        <span className="bg-gradient-to-br from-violet-800 via-violet-900 to-violet-950 bg-clip-text text-transparent">
+                            Fullstack Web Developer
+                        </span>
+                    </h1>
+                    <p className="text-shadow-purple-50 max-w-lg">
+                        I transform complex product requirements into complete digital solutions, engineering both the intuitive front-end and the powerful back-end to serve millions of users
+                    </p>
+                    <div className="flex flex-wrap items-center gap-4 mt-2">
+                        <a
+                            href="/documents/CV Hadi Nurhakim.pdf"
+                            download
+                            className="flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-violet-600 text-violet-600 font-semibold rounded-full hover:bg-violet-800 hover:text-white transition-all duration-300 transform hover:scale-105"
+                        >
+                            <span>Download CV</span>
+                            <DownloadIcon className="w-5 h-5" />
+                        </a>
+                        <div className="flex items-center gap-4">
+                            <SocialLink href="#"><TwitterIcon className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="#"><DribbbleIcon className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="#"><LinkedinIcon className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="#"><GithubIcon className="w-6 h-6" /></SocialLink>
                         </div>
                     </div>
+                </div>
 
-                    {/* Right Side */}
-                    <div className="w-full lg:w-1/2 text-center lg:text-left z-10">
-                        <p className="flex items-center justify-center lg:justify-start gap-2 text-lg font-medium text-white mb-4">
-                            <span className="text-2xl">👋</span> Hi I&#39;m Hadi Nurhakim
-                        </p>
-                        <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tight">
-                            Full Stack Web Development
-                        </h1>
-                        <p className="text-zinc-400 mt-6 max-w-md mx-auto lg:mx-0">
-                            {/* Deskripsi Anda bisa ditambahkan di sini */}
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-8 w-full">
-                            <button className="w-full sm:w-auto bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-md">
-                                <DownloadIcon className="w-6 h-6" />
-                                <span className="truncate">DOWNLOAD CV</span>
-                            </button>
-                            <button className="w-full sm:w-auto flex items-center justify-center gap-3 font-medium group py-3 px-6 rounded-lg transition-transform hover:scale-105">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#A3FF12] flex items-center justify-center transition-transform group-hover:scale-110">
-                                    <PlayIcon className="w-6 h-6" />
-                                </div>
-                                <span className="truncate">PLAY VIDEO</span>
-                            </button>
+                {/* Right Image */}
+                <div className="relative w-full max-w-sm mx-auto lg:justify-end ">
+                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl blur-lg opacity-60"></div>
+                    <div className="relative p-1 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl">
+                        <div className="rounded-[22px] overflow-hidden bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] bg-slate-900">
+                            <Image
+                                src={hadiImage}
+                                width={400}
+                                height={500}
+                                alt="hadi nurhakim, fullstack web developer"
+                                className="w-full h-full object-cover grayscale-[30%] contrast-125"
+                            />
                         </div>
                     </div>
+                </div>
+            </div>
 
+            {/* Bottom Stats */}
+            <div className="mt-16 pt-12 border-t border-slate-800">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    {stats.map((stat) => (
+                        <StatItem key={stat.label} value={stat.value} label={stat.label} />
+                    ))}
                 </div>
             </div>
         </div>

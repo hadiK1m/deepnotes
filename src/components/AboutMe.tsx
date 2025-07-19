@@ -1,19 +1,23 @@
 "use client";
 
 import { DownloadIcon, PlayIcon } from 'lucide-react';
-import Image from 'next/image';
 import React from 'react';
 
 const AboutMe: React.FC = () => {
     return (
-        <div className=" text-white min-h-screen flex items-center justify-center p-4 overflow-hidden">
+        <div className="text-white min-h-screen flex items-center justify-center p-4 overflow-hidden">
+            <style jsx global>{`
+                .image-fade-mask {
+                    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+                    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+                }
+            `}</style>
             <div className="relative w-full max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
                     {/* Left Side */}
                     <div className="relative w-full lg:w-1/2 flex items-center justify-center lg:justify-start">
                         <div className="relative mt-20 lg:mt-0">
-                            {/* Image and Background Arc */}
                             <div className="relative flex items-end justify-center w-[350px] h-[350px] md:w-[450px] md:h-[450px] mx-auto">
                                 <div className="absolute inset-0 flex items-center justify-center z-0">
                                     <div
@@ -27,14 +31,14 @@ const AboutMe: React.FC = () => {
                                     ></div>
                                 </div>
                                 <div className="relative z-10 w-[300px] h-[400px] md:w-[480px] md:h-[533px] flex items-end justify-center overflow-hidden">
-                                    <Image
-                                        src="/hadi.png"
-                                        alt="Foto Hadi Nurhakim"
-                                        className="w-full h-full object-cover object-top border-4 border-gray-700 shadow-lg image-fade-mask" // Menambahkan kelas baru
-                                        // style prop dihapus dari sini
-                                        width={400}
-                                        height={400}
-                                    />
+                                    {/* --- PERUBAHAN DI SINI --- */}
+                                    <div
+                                        className="w-full h-full bg-cover bg-top border-4 border-gray-700 shadow-lg image-fade-mask"
+                                        style={{ backgroundImage: 'url(/hadi.png)' }}
+                                    >
+                                        {/* Div ini sengaja kosong, gambarnya adalah background */}
+                                    </div>
+                                    {/* --- AKHIR PERUBAHAN --- */}
                                 </div>
                             </div>
                         </div>
@@ -49,7 +53,7 @@ const AboutMe: React.FC = () => {
                             Full Stack Web Development
                         </h1>
                         <p className="text-zinc-400 mt-6 max-w-md mx-auto lg:mx-0">
-
+                            {/* Deskripsi Anda bisa ditambahkan di sini */}
                         </p>
                         <div className="flex items-center justify-center lg:justify-start gap-6 mt-8">
                             <button className="bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-transform hover:scale-105 shadow-md">

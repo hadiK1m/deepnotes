@@ -1,4 +1,25 @@
+// src/app/api/gemini/route.ts
+
 import { NextResponse } from 'next/server';
+import admin from 'firebase-admin';
+
+// --- Inisialisasi Firebase Admin ---
+// Ambil kredensial dari environment variable
+const serviceAccountString = process.env.FIREBASE_SERVICE_ACCOUNT;
+if (!serviceAccountString) {
+    throw new Error('FIREBASE_SERVICE_ACCOUNT environment variable is not set.');
+}
+const serviceAccount = JSON.parse(serviceAccountString);
+
+// Inisialisasi hanya jika belum ada
+if (!admin.apps.length) {
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    });
+}
+
+const db = admin.firestore();
+// ------------------------------------
 
 export async function POST(request: Request) {
     try {
@@ -8,12 +29,23 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Pertanyaan tidak boleh kosong.' }, { status: 400 });
         }
 
+        // --- LOGIKA BARU: Simpan pertanyaan ke Firestore ---
+        try {
+            await db.collection('user_questions').add({
+                question: question,
+                timestamp: admin.firestore.FieldValue.serverTimestamp() // Tambahkan waktu saat ini
+            });
+        } catch (dbError) {
+            console.error("Error writing to Firestore:", dbError);
+            // Lanjutkan saja, jangan hentikan fungsi utama jika logging gagal
+        }
+        // ------------------------------------------------
+
         const API_KEY = process.env.GEMINI_API_KEY;
         if (!API_KEY) {
             return NextResponse.json({ error: 'API Key Gemini tidak ditemukan.' }, { status: 500 });
         }
 
-        // Menggunakan model gemini-2.0-flash untuk konsistensi
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
         const prompt = `Saya adalah seorang full-stack web developer yang berpengalaman dalam membangun aplikasi modern 

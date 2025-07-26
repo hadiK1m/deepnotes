@@ -9,13 +9,12 @@ import { notFound } from "next/navigation";
 import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 import { Calendar, Clock, User } from "lucide-react";
+import React from 'react';
 
-// --- PERBAIKAN: Definisikan tipe untuk props halaman secara lebih robust ---
-// Ini adalah cara yang paling eksplisit untuk mendefinisikan props
-// untuk halaman dinamis di Next.js App Router.
-type MateriDetailPageProps = {
-    params: { slug: string };
-};
+// --- PERBAIKAN: Definisikan 'params' sebagai sebuah Promise ---
+interface IMateriDetailPageProps {
+    params: Promise<{ slug: string }>;
+}
 
 // Tipe data untuk detail materi
 interface MateriDetail {
@@ -58,9 +57,11 @@ export async function generateStaticParams() {
     }
 }
 
-// --- PERBAIKAN: Gunakan tipe Props yang sudah didefinisikan ---
-export default async function MateriDetailPage({ params }: MateriDetailPageProps) {
-    const materi = await getMateriBySlug(params.slug);
+const MateriDetailPage: React.FC<IMateriDetailPageProps> = async ({ params }) => {
+    // --- PERBAIKAN: 'await' params untuk mendapatkan isinya ---
+    const { slug } = await params;
+
+    const materi = await getMateriBySlug(slug);
 
     if (!materi) {
         notFound();
@@ -110,3 +111,5 @@ export default async function MateriDetailPage({ params }: MateriDetailPageProps
         </div>
     );
 }
+
+export default MateriDetailPage;

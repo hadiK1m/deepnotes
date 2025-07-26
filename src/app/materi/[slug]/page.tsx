@@ -8,7 +8,13 @@ import { eq } from 'drizzle-orm';
 import { notFound } from "next/navigation";
 import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
-import { Calendar, Clock, User } from "lucide-react"; // Impor ikon untuk metadata
+import { Calendar, Clock, User } from "lucide-react";
+
+// --- PERBAIKAN: Definisikan tipe untuk props halaman ---
+type Props = {
+    params: { slug: string };
+    searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 // Tipe data untuk detail materi
 interface MateriDetail {
@@ -51,7 +57,8 @@ export async function generateStaticParams() {
     }
 }
 
-export default async function MateriDetailPage({ params }: { params: { slug: string } }) {
+// --- PERBAIKAN: Gunakan tipe Props yang sudah didefinisikan ---
+export default async function MateriDetailPage({ params }: Props) {
     const materi = await getMateriBySlug(params.slug);
 
     if (!materi) {
@@ -73,12 +80,9 @@ export default async function MateriDetailPage({ params }: { params: { slug: str
                     <Header />
                     <main className="container mx-auto px-4 pt-32 pb-20 min-h-screen">
                         <article className="max-w-3xl mx-auto">
-                            {/* Judul Utama Artikel */}
                             <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-400 tracking-tight mb-6">
                                 {materi.title}
                             </h1>
-
-                            {/* Metadata Artikel */}
                             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8 text-sm text-gray-400 border-b border-t border-white/10 py-4">
                                 <div className="flex items-center gap-2">
                                     <User size={16} />
@@ -93,8 +97,6 @@ export default async function MateriDetailPage({ params }: { params: { slug: str
                                     <span>{materi.readTime || '5 menit baca'}</span>
                                 </div>
                             </div>
-
-                            {/* Konten Artikel */}
                             <div
                                 className="prose prose-invert prose-lg max-w-none prose-p:leading-relaxed prose-headings:font-bold prose-a:text-violet-400 hover:prose-a:text-violet-300"
                                 dangerouslySetInnerHTML={{ __html: sanitizedContent }}

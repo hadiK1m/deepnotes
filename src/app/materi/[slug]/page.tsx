@@ -10,10 +10,9 @@ import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 import { Calendar, Clock, User } from "lucide-react";
 
-// --- PERBAIKAN: Definisikan tipe untuk props halaman ---
-type Props = {
+// --- PERBAIKAN: Definisikan tipe untuk props halaman secara eksplisit ---
+type MateriDetailPageProps = {
     params: { slug: string };
-    searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 // Tipe data untuk detail materi
@@ -46,7 +45,7 @@ async function getMateriBySlug(slug: string): Promise<MateriDetail | null> {
     }
 }
 
-// (Sangat direkomendasikan) Membuat halaman statis untuk setiap slug saat build
+// Membuat halaman statis untuk setiap slug saat build
 export async function generateStaticParams() {
     try {
         const materiList = await db.select({ slug: materiSchema.slug }).from(materiSchema);
@@ -58,7 +57,7 @@ export async function generateStaticParams() {
 }
 
 // --- PERBAIKAN: Gunakan tipe Props yang sudah didefinisikan ---
-export default async function MateriDetailPage({ params }: Props) {
+export default async function MateriDetailPage({ params }: MateriDetailPageProps) {
     const materi = await getMateriBySlug(params.slug);
 
     if (!materi) {

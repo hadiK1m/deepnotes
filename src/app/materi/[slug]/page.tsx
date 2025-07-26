@@ -10,7 +10,9 @@ import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 import { Calendar, Clock, User } from "lucide-react";
 
-// --- PERBAIKAN: Definisikan tipe untuk props halaman secara eksplisit ---
+// --- PERBAIKAN: Definisikan tipe untuk props halaman secara lebih robust ---
+// Ini adalah cara yang paling eksplisit untuk mendefinisikan props
+// untuk halaman dinamis di Next.js App Router.
 type MateriDetailPageProps = {
     params: { slug: string };
 };

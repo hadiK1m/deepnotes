@@ -60,7 +60,7 @@ export default function Hero() {
                                 type="text"
                                 value={question}
                                 onChange={(e) => setQuestion(e.target.value)}
-                                placeholder="Tanyakan apa saja tentang keahlian saya..."
+                                placeholder="Tanyakan apa saja tentang Skills saya..."
                                 className="w-full bg-transparent text-gray-300 placeholder-gray-500 rounded-full pl-6 pr-32 py-4 focus:outline-none"
                                 disabled={isLoading}
                             />

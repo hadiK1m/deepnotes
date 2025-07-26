@@ -43,10 +43,10 @@ const Contact: React.FC = () => {
             <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 md:p-12">
                 <div className="max-w-2xl">
                     <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                        Mari Terhubung
+                        Let&apos;s Connect
                     </h2>
                     <p className="mt-3 text-base text-indigo-200">
-                        Saya selalu terbuka untuk diskusi, kolaborasi, atau sekadar menyapa. Jangan ragu untuk menghubungi saya.
+                        I&apos;m always open to discussions, collaborations, or simply to say hi. Please feel free to contact me.
                     </p>
                 </div>
                 <div className="flex-shrink-0 w-full lg:w-auto">
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
                                 autoComplete="email"
                                 required
                                 className="flex-grow w-full sm:w-auto lg:min-w-96 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#292258] focus:ring-[#6756d1] transition-all duration-300"
-                                placeholder="Alamat email Anda"
+                                placeholder="Your email address Anda"
                             />
                             <button
                                 type="submit"

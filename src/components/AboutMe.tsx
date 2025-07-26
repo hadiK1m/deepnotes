@@ -2,9 +2,10 @@
 
 
 import React from 'react';
-import { DownloadIcon, TwitterIcon, DribbbleIcon, LinkedinIcon, GithubIcon } from './icons';
+import { DownloadIcon, LinkedinIcon, GithubIcon } from './icons';
 import hadiImage from '@/assets/images/hadi.png';
 import Image from 'next/image';
+import { Youtube } from 'lucide-react';
 
 interface StatProps {
     value: string;
@@ -63,10 +64,9 @@ const AboutMe: React.FC = () => {
                             <DownloadIcon className="w-5 h-5" />
                         </a>
                         <div className="flex items-center gap-4">
-                            <SocialLink href="#"><TwitterIcon className="w-6 h-6" /></SocialLink>
-                            <SocialLink href="#"><DribbbleIcon className="w-6 h-6" /></SocialLink>
-                            <SocialLink href="#"><LinkedinIcon className="w-6 h-6" /></SocialLink>
-                            <SocialLink href="#"><GithubIcon className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="https://www.youtube.com/@CodeWithHadiNH"><Youtube className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="https://www.linkedin.com/in/hadi-nurhakim-ba68332a4/"><LinkedinIcon className="w-6 h-6" /></SocialLink>
+                            <SocialLink href="https://github.com/hadiK1m"><GithubIcon className="w-6 h-6" /></SocialLink>
                         </div>
                     </div>
                 </div>

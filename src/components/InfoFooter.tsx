@@ -10,7 +10,7 @@ const languages = [
 
 const InfoFooter: React.FC = () => {
     return (
-        <footer id='sitefooter' className="w-full bg-[#19014c30] text-white rounded-2xl p-8 md:p-12 font-sans">
+        <footer id='sitefooter' className="w-full bg-[#19014c30] text-white rounded-2xl p-8 md:p-12 font-sans mt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8">
                 {/* About the store */}
                 <div>

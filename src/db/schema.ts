@@ -11,8 +11,8 @@ export const materi = pgTable('materi', {
     tag: text('tag'),
     featured: boolean('featured').default(false),
     createdAt: timestamp('created_at').defaultNow().notNull(),
-    // --- KOLOM BARU YANG DITAMBAHKAN ---
     author: text('author').default('Hadi Nurhakim').notNull(),
     readTime: text('read_time'),
-    image: text('image'), // URL untuk gambar artikel
+    image: text('image'),
+    youtubeUrl: text('youtube_url'), // <-- KOLOM BARU UNTUK VIDEO
 });

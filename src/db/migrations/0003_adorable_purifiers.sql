@@ -1,0 +1,1 @@
+ALTER TABLE "materi" ADD COLUMN "youtube_url" text;

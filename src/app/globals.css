@@ -112,3 +112,21 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 }
+
+h2 {
+    font-size: 1.8rem; /* Ukuran font yang lebih besar */
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+p {
+    margin-bottom: 12px; /* Jarak antar paragraf */
+    font-size: 1.125rem; /* Ukuran font yang lebih besar */
+    line-height: 1.75rem; /* Jarak antar baris yang lebih baik */
+}
+
+li {
+    margin-bottom: 8px; /* Jarak antar item daftar */
+    font-size: 1.125rem; /* Ukuran font yang lebih besar */
+    line-height: 1.75rem; /* Jarak antar baris yang lebih baik */
+}

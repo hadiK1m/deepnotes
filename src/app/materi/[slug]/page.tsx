@@ -120,8 +120,8 @@ const MateriDetailPage: React.FC<IMateriDetailPageProps> = async ({ params }) =>
                                 </div>
                             )}
                         </article>
+                        <SiteFooter />
                     </main>
-                    <SiteFooter />
                 </div>
             </div>
         </div>

@@ -113,6 +113,28 @@ body {
     mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 
+pre {
+    overflow: auto;
+    margin-bottom: 8px;
+    padding: 16px;
+    padding-bottom: 24px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));
+    backdrop-filter: blur(16px); /* Meningkatkan blur untuk efek lebih kuat */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Tepian putih tipis untuk menangkap cahaya */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Bayangan lembut untuk mengangkat elemen */ /* Warna latar belakang yang lebih gelap */
+    color: #E5E7EB; /* Warna teks putih */
+    padding: 4px 8px; /* Padding untuk kode */
+    border-radius: 4px; /* Sudut melengkung */
+    font-family: 'Courier New', Courier, monospace; /* Font monospace untuk kode */
+    font-size: 0.875rem; /* Ukuran font yang lebih kecil */
+}
+
+code {
+    overflow: auto;
+    padding: 2px 4px; /* Padding untuk kode */
+}
+
 h2 {
     font-size: 1.8rem; /* Ukuran font yang lebih besar */
     font-weight: 600;

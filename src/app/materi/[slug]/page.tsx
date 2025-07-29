@@ -110,9 +110,9 @@ const MateriDetailPage: React.FC<IMateriDetailPageProps> = async ({ params }) =>
                             {materi.youtubeUrl && (
                                 <div className="mt-12">
                                     <h2 className="text-3xl font-bold text-white mb-4">Tonton Videonya</h2>
-                                    <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                    <div className="aspect-w-16 aspect-h-9  rounded-lg overflow-hidden">
                                         <iframe
-                                            className="w-full h-full"
+                                            className="min-h-96 w-full h-full"
                                             src={materi.youtubeUrl}
                                             title="YouTube video player"
                                             frameBorder="0"

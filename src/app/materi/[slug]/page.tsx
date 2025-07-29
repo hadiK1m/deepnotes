@@ -10,31 +10,34 @@ import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 import { Calendar, Clock, User } from "lucide-react";
 import React from 'react';
+import MusicPlayer from "@/components/MusicPlayer";
 
 interface IMateriDetailPageProps {
     params: Promise<{ slug: string }>;
 }
 
-// Perbarui tipe data untuk menyertakan URL YouTube
+// Tipe data untuk detail materi
 interface MateriDetail {
     title: string;
     content: string | null;
     author: string;
     createdAt: Date;
     readTime: string | null;
-    youtubeUrl: string | null; // <-- TAMBAHKAN PROPERTI BARU
+    youtubeUrl: string | null;
+    audioUrl: string | null;
 }
 
+// Fungsi untuk mengambil data satu materi berdasarkan slug
 async function getMateriBySlug(slug: string): Promise<MateriDetail | null> {
     try {
-        // Ambil juga kolom youtubeUrl dari database
         const result = await db.select({
             title: materiSchema.title,
             content: materiSchema.content,
             author: materiSchema.author,
             createdAt: materiSchema.createdAt,
             readTime: materiSchema.readTime,
-            youtubeUrl: materiSchema.youtubeUrl, // <-- AMBIL DATA BARU
+            youtubeUrl: materiSchema.youtubeUrl,
+            audioUrl: materiSchema.audioUrl,
         })
             .from(materiSchema)
             .where(eq(materiSchema.slug, slug))
@@ -47,6 +50,7 @@ async function getMateriBySlug(slug: string): Promise<MateriDetail | null> {
     }
 }
 
+// Membuat halaman statis untuk setiap slug saat build
 export async function generateStaticParams() {
     try {
         const materiList = await db.select({ slug: materiSchema.slug }).from(materiSchema);
@@ -103,11 +107,10 @@ const MateriDetailPage: React.FC<IMateriDetailPageProps> = async ({ params }) =>
                                 dangerouslySetInnerHTML={{ __html: sanitizedContent }}
                             />
 
-                            {/* --- BAGIAN BARU UNTUK MENAMPILKAN VIDEO YOUTUBE --- */}
                             {materi.youtubeUrl && (
                                 <div className="mt-12">
                                     <h2 className="text-3xl font-bold text-white mb-4">Tonton Videonya</h2>
-                                    <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden h-96 mt-4">
+                                    <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                         <iframe
                                             className="w-full h-full"
                                             src={materi.youtubeUrl}
@@ -120,10 +123,13 @@ const MateriDetailPage: React.FC<IMateriDetailPageProps> = async ({ params }) =>
                                 </div>
                             )}
                         </article>
-                        <SiteFooter />
                     </main>
+                    <SiteFooter />
                 </div>
             </div>
+            {/* --- PERUBAHAN DI SINI --- */}
+            {/* Teruskan audioUrl sebagai prop HANYA jika ada */}
+            {materi.audioUrl && <MusicPlayer audioSrc={materi.audioUrl} title={materi.title} />}
         </div>
     );
 }

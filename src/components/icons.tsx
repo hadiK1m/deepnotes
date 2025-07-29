@@ -84,3 +84,36 @@ export const ArrowUpRightIcon: React.FC<{ className?: string }> = ({ className }
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
     </svg>
 );
+
+export const PlayIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M8 5V19L19 12L8 5Z" />
+    </svg>
+);
+
+export const PauseIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z" />
+    </svg>
+);
+
+
+export const RewindIcon: React.FC = () => (
+    <div className="relative w-full h-full flex items-center justify-center">
+        <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66675 16C6.66675 10.8527 10.8527 6.66666 16.0001 6.66666C20.0418 6.66666 23.4756 9.18118 24.9734 12.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M24.9734 12.5H20.5001M24.9734 12.5V8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="absolute text-[10px] font-bold">10</span>
+    </div>
+);
+
+export const ForwardIcon: React.FC = () => (
+    <div className="relative w-full h-full flex items-center justify-center">
+        <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.3333 16C25.3333 21.1473 21.1473 25.3333 16 25.3333C11.9583 25.3333 8.52443 22.8188 7.02672 19.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7.02672 19.5H11.5M7.02672 19.5V24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="absolute text-[10px] font-bold">10</span>
+    </div>
+);

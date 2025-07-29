@@ -14,5 +14,6 @@ export const materi = pgTable('materi', {
     author: text('author').default('Hadi Nurhakim').notNull(),
     readTime: text('read_time'),
     image: text('image'),
-    youtubeUrl: text('youtube_url'), // <-- KOLOM BARU UNTUK VIDEO
+    youtubeUrl: text('youtube_url'),
+    audioUrl: text('audio_url'), // <-- KOLOM BARU UNTUK AUDIO
 });

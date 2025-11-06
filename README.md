@@ -1,5 +1,8 @@
 Visit my Project https://deepnotes-mtuy-mmgszjbao-hadi-nurhakims-projects.vercel.app/
 
+<img width="2776" height="1573" alt="image" src="https://github.com/user-attachments/assets/4ce691f8-5e8b-4782-82c4-f89f336662e5" />
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
